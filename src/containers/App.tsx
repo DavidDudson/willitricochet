@@ -32,9 +32,9 @@ export default class App extends React.Component<any, any> {
                   <Column>
                     <BasicEditor />
                   </Column>
-                  <Row>
-                    <Footer />
-                  </Row>
+              </Row>
+              <Row>
+                <Footer />
               </Row>
             </div>
         );
