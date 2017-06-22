@@ -5,19 +5,20 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: [
         "react-hot-loader/patch",
-        "./src/index.tsx",
+        "./src/base_style.scss",
+        "./src/index.tsx"
     ],
     output: {
         path: path.join(__dirname, 'dist'),
         filename: "bundle.js",
     },
 
-    // Enable sourcemaps for debugging webpack's output.
     devtool: "source-map",
 
     resolve: {
-        // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
+        extensions: [
+          ".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".css", ".scss", ".sass"
+        ],
     },
 
     plugins: [
@@ -55,7 +56,7 @@ module.exports = {
                 test: /\.js$/,
                 loader: "source-map-loader"
             },
-        ]
+        ],
     },
 
     devServer: {
