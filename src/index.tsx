@@ -14,12 +14,11 @@ ReactDOM.render(
 // Hot Module Replacement API
 if (module.hot) {
   module.hot.accept("./containers/App", () => {
-    const NextApp = require<RequireImport>("./App").default;
+    const NextApp = require<RequireImport>("./containers/App").default;
     ReactDOM.render(
       <AppContainer>
         <NextApp />
-      </AppContainer>
-      ,
+      </AppContainer>,
       rootEl
     );
   });
