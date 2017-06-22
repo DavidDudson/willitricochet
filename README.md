@@ -1,21 +1,4 @@
-# react-hot-ts
+# Will it ricochet
 
-> Demo of React Hot Reloading + TypeScript
-
-## Install prerequisites
-
-```
-npm install
-```
-
-## Usage
-
-```
-npm start
-```
-
-### Docker
-
-```
-docker-compose up --build
-```
+We ask a simple question, and with the help of some maths,
+we will get the answer.
