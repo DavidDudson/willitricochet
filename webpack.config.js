@@ -41,9 +41,16 @@ module.exports = {
                 ],
                 exclude: path.resolve(__dirname, 'node_modules'),
                 include: path.resolve(__dirname, "src"),
-            },
-            // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-            {
+            }, {
+            test: /\.scss$/,
+            use: [{
+                loader: "style-loader" // creates style nodes from JS strings
+            }, {
+                loader: "css-loader" // translates CSS into CommonJS
+            }, {
+                loader: "sass-loader" // compiles Sass to CSS
+            }]
+        }, {
                 enforce: "pre",
                 test: /\.js$/,
                 loader: "source-map-loader"
