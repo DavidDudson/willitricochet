@@ -42,9 +42,24 @@ $global-flexbox: true;
 @include foundation-flex-classes;
 
 body {
-  width: 100%;
 
   #root {
-    width: inherit;
+    margin: 0;
+
+    > [data-reactroot] {
+        height: 100vh;
+    }
+
+    .row {
+      margin: 0;
+      padding: 0;
+    }
+
+    .columns {
+      margin-left: 0;
+      margin-right: 0;
+      padding-right: 0;
+      padding-left: 0;
+    }
   }
 }

@@ -1,8 +1,10 @@
 import * as React from "react"
 import * as Radium from 'radium'
-import { Row, Column, Accordion, AccordionItem, AccordionTitle, AccordionContent} from 'react-foundation';
+import { Row, Column, Alignments, Accordion, AccordionItem, AccordionTitle, AccordionContent} from 'react-foundation';
 import Footer from "../components/Footer"
 import { BasicEditor } from "../containers/BasicEditor"
+import { Sidebar } from "../containers/Sidebar"
+import { Body } from "../containers/Body"
 import { Style } from 'radium'
 import normalize from 'radium-normalize';
 
@@ -11,36 +13,23 @@ import normalize from 'radium-normalize';
 export default class App extends React.Component<any, any> {
     render() {
         return (
-            <div style={styles}>
-              <Style rules={normalize} />
-              <Row>
-                  <Column>
-                    <Accordion>
-                      <AccordionItem>
-                        <AccordionTitle> About </AccordionTitle>
-                        <AccordionContent> <p>Some text</p> </AccordionContent>
-                      </AccordionItem>
-                      <AccordionItem>
-                        <AccordionTitle> Graphs </AccordionTitle>
-                        <AccordionContent> Some text </AccordionContent>
-                      </AccordionItem>
-                    </Accordion>
-                  </Column>
-                  <Column>
-                    <h1>Hello world!</h1>
-                  </Column>
-                  <Column>
-                    <BasicEditor />
-                  </Column>
-              </Row>
-              <Row>
-                <Footer />
-              </Row>
-            </div>
+            <Row className="align-justify flex-dir-column">
+                <Style rules={normalize} />
+                <Row>
+                    <Column small={12} medium={3}>
+                      <Sidebar />
+                    </Column>
+                    <Column>
+                      <Body />
+                    </Column>
+                    <Column small={12} medium={3}>
+                      <BasicEditor />
+                    </Column>
+                </Row>
+                <Row>
+                  <Footer />
+                </Row>
+            </Row>
         );
     }
-}
-
-const styles = {
-  margin_bottom: '60px'
 }

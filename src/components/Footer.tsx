@@ -5,7 +5,7 @@ import * as Radium from 'radium'
 export default class Footer extends React.Component<any, any> {
     render() {
         return (
-          <div >
+          <div style={styles}>
             <p>this is a footer</p>
           </div>
         );
@@ -13,6 +13,8 @@ export default class Footer extends React.Component<any, any> {
 }
 
 const styles = {
-  position: "fixed",
-  height: "60px",
+   'text-align': 'center',
+   'color': 'white',
+   'background-color': 'black',
+   'width': '100%'
 }
